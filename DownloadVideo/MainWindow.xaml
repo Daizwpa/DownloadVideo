@@ -1,0 +1,34 @@
+﻿<Window x:Class="DownloadVideo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DownloadVideo"
+        mc:Ignorable="d"
+        Title="Dax Downloader" Height="200" Width="500">
+    <Grid Margin="10 50">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button 
+            x:Name="download"
+            Content="Download"
+            Width="100"
+            Margin="0 0 5 0"
+            Command="{Binding download}"
+            CommandParameter="{Binding Text, ElementName=TextBoxUrl}"/>
+        <StackPanel Grid.Column="1" Margin="5 0 0 0" >
+            <TextBox 
+                x:Name="TextBoxUrl"
+                Background="#2c2c2c"
+                Foreground="#ffff"
+                Height="30" 
+                Margin="0 0 0 2"
+                VerticalContentAlignment="Center"/>
+            <ProgressBar Height="30"   x:Name="progerssBar" />
+
+        </StackPanel>
+
+    </Grid>
+</Window>
